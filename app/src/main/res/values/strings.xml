@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Github User\'s Search</string>
+    <string name="image_user">Image User</string>
+    <string name="search_text">Search user</string>
+    <string name="search_username">Username</string>
+    <string name="search_button">Search</string>
+    <string name="dummy_repo">18</string>
+    <string name="location">Location</string>
+    <string name="icon_location">Icon Location</string>
+    <string name="icon_repository">Icon Repository</string>
+    <string name="icon_blank">Icon Blank</string>
+    <string name="icon_company">Icon Company</string>
+    <string name="icon_followers">Icon Followers</string>
+    <string name="txt_blank">No data shown</string>
+    <string name="followers">followers</string>
+    <string name="nol">0</string>
+    <string name="dimas_aldi_candra_s">Dimas Aldi Candra S.</string>
+    <string name="following">following</string>
+    <string name="company">company</string>
+    <string name="initial_repo">18</string>
+    <string name="tik">.</string>
+    <string name="tab_follower">Follower</string>
+    <string name="tab_following">Following</string>
+    <string name="not_found">User Not Found</string>
+    <string name="has_no_followers">Has no followers yet</string>
+    <string name="has_no_following">Not following anyone yet</string>
+    <string name="change_language_settings">Change Language Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
