@@ -14,7 +14,9 @@
         <!-- Customize your theme here. -->
         <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
     </style>
-    
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
     <style name="MySearchView" parent="Widget.AppCompat.SearchView">
         <item name="searchHintIcon">@null</item>
     </style>
