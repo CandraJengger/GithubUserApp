@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,11 +28,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_change_settings) {
-            val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
-            startActivity(mIntent)
+        when (item.itemId) {
+            R.id.action_change_settings -> {
+                val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+                startActivity(mIntent)
+                return true
+            }
+            R.id.favorite_page -> {
+                val mIntent = Intent(this@MainActivity, FavoriteActivity::class.java)
+                startActivity(mIntent)
+                return true
+            }
+            else -> return true
         }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

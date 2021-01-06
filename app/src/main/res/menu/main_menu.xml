@@ -11,7 +11,8 @@
         <item
             android:icon="@drawable/ic_favorite"
             android:id="@+id/favorite_page"
-            android:title="@string/favorite_page" />
+            android:title="@string/favorite_page"
+            app:showAsAction="always"/>
 
     </group>
 </menu>
