@@ -55,6 +55,22 @@ class UserActivity : AppCompatActivity() {
 
         supportActionBar?.elevation = 0f
 
+        binding.fabFavorite.setOnClickListener {
+            if (binding.fabFavorite.contentDescription == getString(R.string.cancel_favorite)) {
+                setFavoriteButton(true)
+            } else {
+                setFavoriteButton(false)
+            }
+        }
+    }
 
+    private fun setFavoriteButton(state: Boolean) {
+        if (state) {
+            binding.fabFavorite.contentDescription = getString(R.string.favorite)
+            binding.fabFavorite.setImageResource(R.drawable.ic_favorite)
+        } else {
+            binding.fabFavorite.contentDescription = getString(R.string.cancel_favorite)
+            binding.fabFavorite.setImageResource(R.drawable.ic_unfavorite)
+        }
     }
 }
