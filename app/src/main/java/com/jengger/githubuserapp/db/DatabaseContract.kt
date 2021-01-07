@@ -12,6 +12,7 @@ internal class DatabaseContract {
             const val LOCATION = "location"
             const val COMPANY = "company"
             const val REPO = "repo"
+            const val IMAGE_USER = "image_user"
         }
     }
 }
