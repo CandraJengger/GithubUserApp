@@ -2,13 +2,11 @@ package com.jengger.githubuserapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +14,7 @@ import com.jengger.githubuserapp.Adapter.UserAdapter
 import com.jengger.githubuserapp.Model.UserItems
 import com.jengger.githubuserapp.ViewModel.MainViewModel
 import com.jengger.githubuserapp.databinding.ActivityMainBinding
-import com.jengger.githubuserapp.db.UserHelper
+import com.jengger.githubuserapp.fragments.SettingFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var adapter: UserAdapter
@@ -31,8 +29,12 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_change_settings -> {
-                val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
-                startActivity(mIntent)
+//                val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+//                startActivity(mIntent)
+                val settingsFragment = SettingFragment()
+
+                val mFragmentManager = supportFragmentManager
+                settingsFragment.show(mFragmentManager, SettingFragment::class.java.simpleName)
                 return true
             }
             R.id.favorite_page -> {
