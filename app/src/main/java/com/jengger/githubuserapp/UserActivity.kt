@@ -19,9 +19,7 @@ import com.jengger.githubuserapp.db.UserHelper
 import com.jengger.githubuserapp.helper.MappingHelper
 
 class UserActivity : AppCompatActivity(), View.OnClickListener {
-    private var isFavorite = false
     private var user: UserItems? = null
-    private var position : Int =0
     private var username: String? = null
     private lateinit var userHelper: UserHelper
 

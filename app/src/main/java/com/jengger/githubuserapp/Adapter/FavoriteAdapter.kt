@@ -53,20 +53,6 @@ class FavoriteAdapter (private val activity: Activity) : RecyclerView.Adapter<Fa
         }
     }
 
-    fun addItem(note: UserItems) {
-        this.listUsers.add(note)
-        notifyItemInserted(this.listUsers.size - 1)
-    }
-    fun updateItem(position: Int, note: UserItems) {
-        this.listUsers[position] = note
-        notifyItemChanged(position, note)
-    }
-    fun removeItem(position: Int) {
-        this.listUsers.removeAt(position)
-        notifyItemRemoved(position)
-        notifyItemRangeChanged(position, this.listUsers.size)
-    }
-
     interface OnItemClickCallback {
         fun onItemClicked(data: UserItems)
     }
