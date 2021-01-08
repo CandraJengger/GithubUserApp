@@ -13,6 +13,10 @@ internal class DatabaseContract {
             const val COMPANY = "company"
             const val REPO = "repo"
             const val IMAGE_USER = "image_user"
+            const val FOLLOWERS = "followers"
+            const val FOLLOWING = "following"
+            const val URL_FOLLOWERS = "url_followers"
+            const val URL_FOLLOWING = "url_following"
         }
     }
 }

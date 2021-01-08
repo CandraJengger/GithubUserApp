@@ -16,6 +16,7 @@ import com.jengger.githubuserapp.Adapter.UserAdapter
 import com.jengger.githubuserapp.Model.UserItems
 import com.jengger.githubuserapp.ViewModel.MainViewModel
 import com.jengger.githubuserapp.databinding.ActivityMainBinding
+import com.jengger.githubuserapp.db.UserHelper
 
 class MainActivity : AppCompatActivity() {
     private lateinit var adapter: UserAdapter
@@ -93,7 +94,9 @@ class MainActivity : AppCompatActivity() {
                 startActivity(moveWithObjectUser)
             }
         })
+
     }
+
 
 
     private fun showRecyclerView(state: Boolean) {

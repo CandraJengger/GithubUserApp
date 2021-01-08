@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.jengger.githubuserapp.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
+import com.jengger.githubuserapp.db.DatabaseContract.UserColumns.Companion.USERNAME
 import com.jengger.githubuserapp.db.DatabaseContract.UserColumns.Companion._ID
 import java.sql.SQLException
 
@@ -47,13 +48,13 @@ class UserHelper (context: Context){
                 "$_ID ASC")
     }
 
-    // mencari berdasarkan id
-    fun queryById(id: String): Cursor {
+    // mencari berdasarkan username
+    fun queryByUsername(username: String): Cursor {
         return database.query(
                     DATABASE_TABLE,
                     null,
-                    "$_ID = ?",
-                    arrayOf(id),
+                    "$USERNAME = ?",
+                    arrayOf(username),
                     null,
                     null,
                     null,
@@ -71,7 +72,7 @@ class UserHelper (context: Context){
     }
 
     // menghapus data
-    fun deleteById(id: String): Int {
-        return database.delete(DATABASE_TABLE, "$_ID = '$id'", null)
+    fun deleteByUsername(username: String): Int {
+        return database.delete(DATABASE_TABLE, "$USERNAME = '$username'", null)
     }
 }

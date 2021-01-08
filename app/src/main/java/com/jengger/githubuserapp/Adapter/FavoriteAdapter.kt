@@ -5,22 +5,26 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
-import com.jengger.githubuserapp.CustomOnItemClickListener
 import com.jengger.githubuserapp.Model.UserItems
 import com.jengger.githubuserapp.R
+import com.jengger.githubuserapp.UserActivity
 import com.jengger.githubuserapp.databinding.UserItemsBinding
 
 class FavoriteAdapter (private val activity: Activity) : RecyclerView.Adapter<FavoriteAdapter.UserViewHolder>() {
-    var listNotes = ArrayList<UserItems>()
+
+    private var onItemClickCallback: OnItemClickCallback? = null
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+    var listUsers = ArrayList<UserItems>()
         set(listNotes) {
             if (listNotes.size > 0) {
-                this.listNotes.clear()
+                this.listUsers.clear()
             }
-            this.listNotes.addAll(listNotes)
+            this.listUsers.addAll(listNotes)
             notifyDataSetChanged()
         }
 
@@ -30,9 +34,9 @@ class FavoriteAdapter (private val activity: Activity) : RecyclerView.Adapter<Fa
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.bind(listNotes[position])
+        holder.bind(listUsers[position])
     }
-    override fun getItemCount(): Int = this.listNotes.size
+    override fun getItemCount(): Int = this.listUsers.size
 
     inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = UserItemsBinding.bind(itemView)
@@ -45,26 +49,25 @@ class FavoriteAdapter (private val activity: Activity) : RecyclerView.Adapter<Fa
                     .into(binding.imgPhoto)
 
 
-            itemView.setOnClickListener (CustomOnItemClickListener(adapterPosition, object : CustomOnItemClickListener.OnItemClickCallback {
-                override fun onItemClicked(view: View, position: Int) {
-                    Snackbar.make(view, "Kenek", Snackbar.LENGTH_LONG).show()
-
-                }
-            }))
+            itemView.setOnClickListener { onItemClickCallback?.onItemClicked(user) }
         }
     }
 
     fun addItem(note: UserItems) {
-        this.listNotes.add(note)
-        notifyItemInserted(this.listNotes.size - 1)
+        this.listUsers.add(note)
+        notifyItemInserted(this.listUsers.size - 1)
     }
     fun updateItem(position: Int, note: UserItems) {
-        this.listNotes[position] = note
+        this.listUsers[position] = note
         notifyItemChanged(position, note)
     }
     fun removeItem(position: Int) {
-        this.listNotes.removeAt(position)
+        this.listUsers.removeAt(position)
         notifyItemRemoved(position)
-        notifyItemRangeChanged(position, this.listNotes.size)
+        notifyItemRangeChanged(position, this.listUsers.size)
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: UserItems)
     }
 }

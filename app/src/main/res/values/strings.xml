@@ -31,4 +31,7 @@
     <string name="favorite_page">Favorite Page</string>
     <string name="favorite">Favorite</string>
     <string name="cancel_favorite">Cancel favorite</string>
+    <string name="added_favorite">You added as favorites</string>
+    <string name="remove_favorite">You remove from favorites</string>
+    <string name="failed">Failed</string>
 </resources>

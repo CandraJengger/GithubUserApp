@@ -32,4 +32,7 @@
     <string name="favorite_page">Halaman</string>
     <string name="favorite">Favorit</string>
     <string name="cancel_favorite">Batal favorite</string>
+    <string name="added_favorite">Anda menambahkan sebagai favorit</string>
+    <string name="remove_favorite">Anda menghapus dari favorit</string>
+    <string name="failed">Gagal</string>
 </resources>

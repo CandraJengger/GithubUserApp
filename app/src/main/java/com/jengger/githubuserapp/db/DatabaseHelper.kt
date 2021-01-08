@@ -14,10 +14,14 @@ internal class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATA
                 " (${DatabaseContract.UserColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " ${DatabaseContract.UserColumns.USERNAME} TEXT NOT NULL," +
                 " ${DatabaseContract.UserColumns.NAME} TEXT NOT NULL," +
-                " ${DatabaseContract.UserColumns.LOCATION} TEXT NOT NULL)" +
-                " ${DatabaseContract.UserColumns.COMPANY} TEXT NOT NULL)" +
-                " ${DatabaseContract.UserColumns.REPO} TEXT NOT NULL)" +
-                " ${DatabaseContract.UserColumns.IMAGE_USER} TEXT NOT NULL"
+                " ${DatabaseContract.UserColumns.LOCATION} TEXT NOT NULL," +
+                " ${DatabaseContract.UserColumns.COMPANY} TEXT NOT NULL," +
+                " ${DatabaseContract.UserColumns.REPO} TEXT NOT NULL," +
+                " ${DatabaseContract.UserColumns.IMAGE_USER} TEXT NOT NULL," +
+                " ${DatabaseContract.UserColumns.FOLLOWERS} TEXT NOT NULL," +
+                " ${DatabaseContract.UserColumns.FOLLOWING} TEXT NOT NULL," +
+                " ${DatabaseContract.UserColumns.URL_FOLLOWERS} TEXT NOT NULL," +
+                " ${DatabaseContract.UserColumns.URL_FOLLOWING} TEXT NOT NULL)"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
