@@ -39,7 +39,7 @@
     <string name="reminder">Daily Reminder</string>
     <string name="reminder_on">Daily Reminder On</string>
     <string name="reminder_off">Daily Reminder Off</string>
-    <string name="reminder_title">Github User Waiting For You</string>
+    <string name="reminder_title">Github User</string>
     <string name="reminder_message">Find Your Favorite User Now!</string>
     <string name="reminder_key" translatable="false">Reminder</string>
 </resources>
